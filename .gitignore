@@ -1,0 +1,11 @@
+# Credentials and Environment
+.env
+
+# Scraped Data
+*.csv
+
+# Python environment
+__pycache__/
+venv/
+.venv/
+.DS_Store
