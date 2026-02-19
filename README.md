@@ -35,7 +35,7 @@ Language: Python 3.10+
 Installation:
 1. Clone the repository:
    ```
-   git clone [repo-url]
+   git clone https://github.com/FawazAli18/Suffolk-County-Registry-Webscraper.git
    ```
 2. Install Dependencies:
    ```
