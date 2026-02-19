@@ -7,9 +7,9 @@ This automated tool is designed to extract daily real estate deed records from t
 # 2. Tech Stack
 
 Language: Python 3.10+
-Automation Tool: Playwright
-API Integration: Microsoft Graph API via msal and requests
-Configuration: python-dotenv for environment variable management.
+- Automation Tool: Playwright
+- API Integration: Microsoft Graph API via msal and requests
+- Configuration: python-dotenv for environment variable management.
 
 # 3. Data Extraction Strategy
 
@@ -47,6 +47,6 @@ Installation:
    TENANT_ID=your_tenant_id
    CLIENT_ID=your_client_id
    CLIENT_SECRET=your_client_secret
-   SENDER_EMAIL=AppEmailSharedBox@thewarrengroup.com
-   RECIPIENT_EMAIL=datascience_intern@thewarrengroup.com
+   SENDER_EMAIL=sender email
+   RECIPIENT_EMAIL= recipient email
    ```
