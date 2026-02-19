@@ -60,12 +60,12 @@ async def send_email_with_graph(file_path):
         )
         
         if response.status_code == 202:
-            print("✓ Email sent successfully via Graph API.")
+            print(" Email sent successfully via Graph API.")
         else:
-            print(f"✗ Failed to send email (HTTP {response.status_code}):")
+            print(f" Failed to send email (HTTP {response.status_code}):")
             print(f"  Error Details: {response.text}")
     else:
-        print(f"✗ Token acquisition failed: {result.get('error_description')}")
+        print(f" Token acquisition failed: {result.get('error_description')}")
 
 async def run_scraper():
     async with async_playwright() as p:
@@ -206,4 +206,5 @@ async def run_scraper():
         await browser.close()
 
 if __name__ == "__main__":
+
     asyncio.run(run_scraper())
