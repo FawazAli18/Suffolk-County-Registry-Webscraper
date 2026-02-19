@@ -13,15 +13,16 @@ Configuration: python-dotenv for environment variable management.
 
 # 3. Data Extraction Strategy
 
-Data Point	Locator Type	Selector / Path
-Result Links	CSS (Partial ID)	a[id*='ButtonRow_Book/Page_']
-Street Number	XPath (Relative)	//th[text()='Street #']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[1]
-Street Name	XPath (Relative)	//th[text()='Street #']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[2]
-Consideration	XPath (Relative)	//th[text()='Consideration']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[7]
-Grantor Name	XPath (Functional)	//tr[td[2]='Grantor']/td[1]//a
-Grantee Name	XPath (Functional)	//tr[td[2]='Grantee']/td[1]//a
-Loading Overlay	ID	#ProgressBar1_UpdateProgress2
-Next Page	ID	#DocList1_LinkButtonNext
+| Data Point | Locator Type | Selector / Path |
+| :--- | :--- | :--- |
+| **Result Links** | CSS (Partial ID) | `a[id*='ButtonRow_Book/Page_']` |
+| **Street Number** | XPath (Relative) | `//th[text()='Street #']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[1]` |
+| **Street Name** | XPath (Relative) | `//th[text()='Street #']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[2]` |
+| **Consideration** | XPath (Relative) | `//th[text()='Consideration']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[7]` |
+| **Grantor Name** | XPath (Functional) | `//tr[td[2]='Grantor']/td[1]//a` |
+| **Grantee Name** | XPath (Functional) | `//tr[td[2]='Grantee']/td[1]//a` |
+| **Loading Overlay**| ID | `#ProgressBar1_UpdateProgress2` |
+| **Next Page** | ID | `#DocList1_LinkButtonNext` |
 
 # 4. Key Features:
 
@@ -33,9 +34,19 @@ Next Page	ID	#DocList1_LinkButtonNext
 
 Installation:
 1. Clone the repository:
+   ```
    git clone [repo-url]
-   cd county-webscrapers
-
+   ```
 2. Install Dependencies:
+   ```
    pip install -r requirements.txt
    playwright install chromium
+   ```
+3. Environment Variables create a .env file in the root directory with the following credentials:
+   ```
+   TENANT_ID=your_tenant_id
+   CLIENT_ID=your_client_id
+   CLIENT_SECRET=your_client_secret
+   SENDER_EMAIL=AppEmailSharedBox@thewarrengroup.com
+   RECIPIENT_EMAIL=datascience_intern@thewarrengroup.com
+   ```
