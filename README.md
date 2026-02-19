@@ -13,18 +13,29 @@ Configuration: python-dotenv for environment variable management.
 
 # 3. Data Extraction Strategy
 
-Data Point,Locator Type,Selector / Path
-Result Links,CSS (Partial ID),a[id*='ButtonRow_Book/Page_']
-Street Number,XPath (Relative),"//th[text()='Street #']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[1]"
-Street Name,XPath (Relative),"//th[text()='Street #']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[2]"
-Consideration,XPath (Relative),"//th[text()='Consideration']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[7]"
-Grantor Name,XPath (Functional),//tr[td[2]='Grantor']/td[1]//a
-Grantee Name,XPath (Functional),//tr[td[2]='Grantee']/td[1]//a
-Loading Overlay,ID,#ProgressBar1_UpdateProgress2
-Next Page,ID,#DocList1_LinkButtonNext
+Data Point	Locator Type	Selector / Path
+Result Links	CSS (Partial ID)	a[id*='ButtonRow_Book/Page_']
+Street Number	XPath (Relative)	//th[text()='Street #']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[1]
+Street Name	XPath (Relative)	//th[text()='Street #']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[2]
+Consideration	XPath (Relative)	//th[text()='Consideration']/ancestor::table[1]//tr[contains(@class,'DataGridRow')]/td[7]
+Grantor Name	XPath (Functional)	//tr[td[2]='Grantor']/td[1]//a
+Grantee Name	XPath (Functional)	//tr[td[2]='Grantee']/td[1]//a
+Loading Overlay	ID	#ProgressBar1_UpdateProgress2
+Next Page	ID	#DocList1_LinkButtonNext
 
-#4. Key Features:
+# 4. Key Features:
 
 - The script implements a validation loop that compares the target_id (from the results list) with the detail_id (rendered in the detail view) before extraction. This ensures that the data being scraped has fully refreshed after an AJAX update.
 - Uses index-based querying (.nth(i)) instead of element handles to prevent "Element not attached to DOM" errors after page navigation or "go_back" actions.
 - Integrates with Microsoft Graph API to transmit the CSV output directly from a shared mailbox.
+
+# 5. Set up and Config
+
+Installation:
+1. Clone the repository:
+   git clone [repo-url]
+   cd county-webscrapers
+
+2. Install Dependencies:
+   pip install -r requirements.txt
+   playwright install chromium
