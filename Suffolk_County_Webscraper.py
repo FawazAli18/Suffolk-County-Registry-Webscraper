@@ -18,11 +18,7 @@ RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL")
 
 
 async def find_element(page, selectors: list, timeout: int = 10000):
-    """
-    Try multiple selectors in priority order.
-    Returns the first visible locator found, or raises an
-    Exception listing all selectors that were attempted.
-    """
+   
     per_selector_timeout = max(1000, timeout // len(selectors))
 
     for selector in selectors:
@@ -40,11 +36,7 @@ async def find_element(page, selectors: list, timeout: int = 10000):
 
 
 async def find_all(page, selectors: list, timeout: int = 10000):
-    """
-    Same idea as find_element but returns all matching elements
-    for the first selector that produces at least one result.
-    Useful for result-row links, etc.
-    """
+   
     per_selector_timeout = max(1000, timeout // len(selectors))
 
     for selector in selectors:
@@ -62,7 +54,6 @@ async def find_all(page, selectors: list, timeout: int = 10000):
 
 
 async def click_element(page, selectors: list, timeout: int = 10000):
-    """Convenience wrapper — finds then clicks."""
     element = await find_element(page, selectors, timeout)
     await element.click()
 
@@ -78,7 +69,6 @@ async def select_option_resilient(page, selectors: list, label: str = None, valu
 
 
 async def fill_field(page, selectors: list, text: str, timeout: int = 10000):
-    """Finds an input, clears it, and types the given text."""
     element = await find_element(page, selectors, timeout)
     await element.click()
     await element.press("Control+A")
@@ -377,3 +367,4 @@ async def run_scraper():
 
 if __name__ == "__main__":
     asyncio.run(run_scraper())
+
